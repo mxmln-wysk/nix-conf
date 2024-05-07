@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs,stylix, ... }:
 
 {
   imports =
@@ -11,7 +11,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixPadT440s"; # Define your hostname.
-
+  stylix.image = ./wallpaper.webp;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  home-manager.backupFileExtension = "backup";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";

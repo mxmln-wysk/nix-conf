@@ -58,13 +58,13 @@
 		};
   };
   #@toDo auslagern in gnome/default.nix
-  dconf.settings = {
-        "org/gnome/desktop/background" = {
-        picture-uri = "file:///etc/nixos/wallpaper.webp";
-        };
-    };
+  #dconf.settings = {
+  #      "org/gnome/desktop/background" = {
+  #      picture-uri = "file:///etc/nixos/wallpaper.webp";
+   #     };
+  #  };
 
- 
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
