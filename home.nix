@@ -49,6 +49,7 @@
 				"cdn" = "cd /etc/nixos/";
         "update" = "sudo nix flake update";
         "switch" = "sudo nixos-rebuild switch --flake .";
+        "remove" = "sudo nix-collect-garbage -d";
 			};
 			initExtra =''
 				source ~/.bashScripts/git-prompt.sh
