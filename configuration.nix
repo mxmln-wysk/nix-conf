@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,stylix, ... }:
+{ config, pkgs, inputs,stylix, home-manager,... }:
 
 {
   imports =
@@ -11,9 +11,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixPadT440s"; # Define your hostname.
-  stylix.image = ./wallpaper.webp;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-  home-manager.backupFileExtension = "backup";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
@@ -66,9 +63,13 @@
 	
 	home-manager = {
 		extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
 		users = {
 			"mwysk" = import ./home.nix;
 		};
+    sharedModules = [{
+      stylix.targets.gnome.enable = false;
+    }];
 	};
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
@@ -92,18 +93,23 @@
     converseen #imageConverter
     libreoffice-still
     logseq
+    gimp
+    ventoy#live usb maker
+    yt-dlp#youtube Downloader
     #programming
     git
     nodejs_20
     vscode
   ];
-
+  fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     noto-fonts-emoji
+    noto-fonts
     roboto
     roboto-mono
     roboto-slab
     roboto-serif
+    dejavu_fonts
   ];
 
 	#Nix flakes

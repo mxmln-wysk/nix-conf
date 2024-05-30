@@ -46,7 +46,7 @@
 			enable = true;
 			shellAliases = {
 				".." = "cd ..";
-				"cdn" = "cd /etc/nixos/";
+				"cdn" = "cd ~/nix-conf/";
         "update" = "sudo nix flake update";
         "switch" = "sudo nixos-rebuild switch --flake .";
         "remove" = "sudo nix-collect-garbage -d";
