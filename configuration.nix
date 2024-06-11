@@ -86,21 +86,34 @@
     htop
     qogir-theme
     qogir-icon-theme
-    graphite-gtk-theme
     #gnome.dconf-editor
     vlc
+    zoom-us
+    spotify
     gparted
     converseen #imageConverter
     libreoffice-still
     logseq
     gimp
+    inkscape
+    pitivi#video editor
+    errands#todo app
     ventoy#live usb maker
     yt-dlp#youtube Downloader
+    meld#Visual diff and merge tool
     #programming
     git
+    php
     nodejs_20
     vscode
+    filezilla
   ];
+
+  services.mysql = {
+  enable = true;
+  package = pkgs.mariadb;
+};
+
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     noto-fonts-emoji

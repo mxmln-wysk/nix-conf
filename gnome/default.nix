@@ -12,17 +12,17 @@
             base02 = "2A5054";
             base03 = "587073";
             base04 = "9DC8CD";
-            base05 = "C7DBDD";
+            base05 = "F0F8FF"; #alice blue
             base06 = "CBF2F7";
-            base07 = "D2FAFF";
+            base07 = "F0F8FF"; #alice blue
             base08 = "fb6953";
             base09 = "fcab74";
             base0A = "fce380";
             base0B = "73d8ad";
             base0C = "3fb2b9";
-            base0D = "FF7F50";#coral
+            base0D = "FF7F50"; #coral
             base0E = "756b8a";
-            base0F = "FF7F50";#coral
+            base0F = "FF7F50"; #coral
         };    
         #base16Scheme = "${pkgs.base16-schemes}/share/themes/silk-dark.yaml";
         cursor = { 

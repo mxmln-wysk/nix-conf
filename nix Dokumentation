@@ -1,0 +1,53 @@
+Showcase NixOS
+	Reproducible - Reproduzierbar
+	
+
+	Declarative - Deklarativ
+
+
+	Reliable - Zuverlässig
+		Rollbacks
+		
+	Gnome mit Stylix
+		
+Dokumentation
+	NixOS Basic infos
+	NixOS in der Linux Community
+	Nix als Pkgs Manager in NixOS und andere
+	Rolling realase vs Point Release
+	Installation, funktionierte wie erwartet
+	
+	
+	Für wen eignet sich NixOS (nicht)
+		eher für Entwickler*innen geeignet, hier Bezug: https://nixos.org/explore/
+		nicht beginner freundlich
+		Freiheit und vollkommene Transparenz out of the Box
+		für Personen mit vielen Endgeräten
+		
+	nixOS Drama?
+		hat sich eigentlich aktuell wieder gelegt.
+
+- Wie lässt sich Linux im Rahmen der Sozialen Arbeit sinnvoll und zielgerichtet verwenden? Welche Bezüge dazu fallen mir ein oder welche kann ich dazu herstellen?
+	Computer Labs bzw bei vielen Lern-PC zum Beispiel in Medienpädagogischen Raum
+	Vorallem durch repruduzierbarkeit, wenn irgendein TN was kaputt macht kann eher ein Rollback oder eine neue Installation erfolgen, allerdings wieder mit den gleichen Apps auf dem Pc
+	bei neuen Apps die überall installiert werden soll, reicht eine Änderung in Github https://nixcademy.com/2023/08/10/nixos-rebuild-remote-deployment/
+	
+	
+
+	
+Probleme
+	nicht das standard Linux Datei system 
+		=> führt zu speziellen Problemen, PHP Umgebung mit Datenbankserver
+	wenig Dokumentation
+	viele neue Konzepte + neue Programmiersprache (Nix)
+	teilweise unverständliche Fehlermeldungen beim "Switch"
+	
+Im Vergleich zu Arch/EndouverOS:
+	sicherer durch Rollbacks out of the Box
+	rolling release oder point release
+	hinkt bei den neusten Versionen im Vergleich hinter Arch hinterher(point release)
+	
+	
+	
+	
+	
