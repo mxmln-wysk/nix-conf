@@ -7,8 +7,10 @@ Showcase NixOS
 
 	Reliable - Zuverlässig
 		Rollbacks
-		
+		ein mal zeigen
 	Gnome mit Stylix
+	
+	
 		
 Dokumentation
 	NixOS Basic infos
@@ -26,6 +28,7 @@ Dokumentation
 		
 	nixOS Drama?
 		hat sich eigentlich aktuell wieder gelegt.
+		https://github.com/KFearsoff/nix-drama-explained
 
 - Wie lässt sich Linux im Rahmen der Sozialen Arbeit sinnvoll und zielgerichtet verwenden? Welche Bezüge dazu fallen mir ein oder welche kann ich dazu herstellen?
 	Computer Labs bzw bei vielen Lern-PC zum Beispiel in Medienpädagogischen Raum
@@ -33,14 +36,14 @@ Dokumentation
 	bei neuen Apps die überall installiert werden soll, reicht eine Änderung in Github https://nixcademy.com/2023/08/10/nixos-rebuild-remote-deployment/
 	
 	
-
 	
 Probleme
 	nicht das standard Linux Datei system 
 		=> führt zu speziellen Problemen, PHP Umgebung mit Datenbankserver
 	wenig Dokumentation
 	viele neue Konzepte + neue Programmiersprache (Nix)
-	teilweise unverständliche Fehlermeldungen beim "Switch"
+	teilweise unverständliche und auch fehlerhafte Fehlermeldungen beim "Switch"
+	bsp. bild electron
 	
 Im Vergleich zu Arch/EndouverOS:
 	sicherer durch Rollbacks out of the Box

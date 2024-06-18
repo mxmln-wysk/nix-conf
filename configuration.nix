@@ -107,7 +107,13 @@
     nodejs_20
     vscode
     filezilla
+    electron_27
+    ungoogled-chromium
   ];
+   nixpkgs.config.permittedInsecurePackages = [
+    "electron-27.3.11"#look if this is necessary for next update
+  ];
+
 
   services.mysql = {
   enable = true;
@@ -132,11 +138,11 @@
   nix.settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
 
   # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
+  #automatic Garbage collection. to see it: systemctl list-timers
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+    };
 }

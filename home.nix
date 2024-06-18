@@ -50,6 +50,7 @@
         "update" = "sudo nix flake update";
         "switch" = "sudo nixos-rebuild switch --flake .";
         "remove" = "sudo nix-collect-garbage -d";
+        "generations" = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
 			};
 			initExtra =''
 				source ~/.bashScripts/git-prompt.sh
