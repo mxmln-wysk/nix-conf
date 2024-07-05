@@ -34,7 +34,8 @@
 
   services.xserver.enable = true; # Enable the X11 windowing system.
  
-	
+	services.desktopManager.cosmic.enable = false;
+  services.displayManager.cosmic-greeter.enable = false;
   services.printing.enable = true; # Enable CUPS to print documents
   sound.enable = true; # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -78,7 +79,6 @@
   environment.systemPackages = with pkgs; [
     gedit
     thunderbird
-    gnome.gnome-tweaks
     neofetch
     google-chrome
     dropbox
@@ -107,17 +107,18 @@
     nodejs_20
     vscode
     filezilla
-    electron_27
     ungoogled-chromium
+    surf
   ];
    nixpkgs.config.permittedInsecurePackages = [
+    "electron-28.3.3"#look if this is necessary for next update
     "electron-27.3.11"#look if this is necessary for next update
   ];
 
 
   services.mysql = {
-  enable = true;
-  package = pkgs.mariadb;
+    enable = true;
+    package = pkgs.mariadb;
 };
 
   fonts.enableDefaultPackages = true;

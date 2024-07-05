@@ -49,34 +49,9 @@
         };
     };
 
-	environment.gnome.excludePackages = (with pkgs; [
-		gnome-photos
-		gnome-tour
-		gnome-text-editor
-		gnome-connections #remote desktop client
-	]) ++ (with pkgs.gnome; [
-		cheese # webcam tool
-		#gnome-music
-		gnome-terminal
-		gnome-maps
-		gnome-contacts
-		gnome-weather
-		gnome-calendar
-		yelp #gnome helper
-		epiphany # web browser
-		geary # email reader
-		#evince # document viewer
-		#gnome-characters
-		#totem # video player
-		tali # poker game
-		iagno # go game
-		hitori # sudoku game
-		atomix # puzzle game
-	]);
-
-
-	environment.systemPackages = with pkgs;[
-		gnomeExtensions.alphabetical-app-grid
+     environment.systemPackages = with pkgs; [
+        gnome-tweaks
+        gnomeExtensions.alphabetical-app-grid
 		gnomeExtensions.bluetooth-quick-connect
 		gnomeExtensions.color-picker
 		gnomeExtensions.date-menu-formatter
@@ -85,5 +60,31 @@
 		gnomeExtensions.grand-theft-focus
 		gnomeExtensions.user-themes
 		gnomeExtensions.vitals
-	];
+    ];
+	environment.gnome.excludePackages = (with pkgs; [
+		gnome-photos
+		gnome-tour
+		gnome-text-editor
+		gnome-connections #remote desktop client
+        cheese # webcam tool
+        gnome-terminal
+		gnome-calendar
+		yelp #gnome helper
+		epiphany # web browser
+		geary # email reader
+
+	]) ++ (with pkgs.gnome; [
+		#gnome-music
+		gnome-maps
+		gnome-contacts
+		gnome-weather
+		iagno # go game
+        tali # poker game
+		hitori # sudoku game
+		atomix # puzzle game
+		#evince # document viewer
+		#gnome-characters
+		#totem # video player
+	
+	]);
 }
