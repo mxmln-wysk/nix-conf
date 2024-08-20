@@ -34,8 +34,10 @@
 
   services.xserver.enable = true; # Enable the X11 windowing system.
  
+ #Cosmic Desktop
 	services.desktopManager.cosmic.enable = false;
   services.displayManager.cosmic-greeter.enable = false;
+
   services.printing.enable = true; # Enable CUPS to print documents
   sound.enable = true; # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -109,6 +111,7 @@
     filezilla
     ungoogled-chromium
     surf
+    rpi-imager
   ];
    nixpkgs.config.permittedInsecurePackages = [
     "electron-28.3.3"#look if this is necessary for next update
