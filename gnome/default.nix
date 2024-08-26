@@ -83,7 +83,7 @@
 		hitori # sudoku game
 		atomix # puzzle game
 		#evince # document viewer
-		#gnome-characters
+		gnome-characters
 		#totem # video player
 	
 	]);

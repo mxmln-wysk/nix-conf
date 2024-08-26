@@ -33,9 +33,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  #home.sessionVariables.GTK_THEME = "Qogir";
 
-  #home.sessionVariables.GTK_THEME = "qogir";	
   programs = {
 		git = {
 		  enable = true;
@@ -59,16 +57,8 @@
 				'';
 		};
   };
-  #@toDo auslagern in gnome/default.nix
-  #dconf.settings = {
-  #      "org/gnome/desktop/background" = {
-  #      picture-uri = "file:///etc/nixos/wallpaper.webp";
-   #     };
-  #  };
 
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a

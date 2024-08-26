@@ -3,11 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #cosmic DE for testing
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     stylix = {
       url = "github:bluskript/stylix";
@@ -22,22 +17,19 @@
     };
   };
 
-  outputs = inputs@{ self,stylix, nixpkgs, home-manager,nixos-cosmic, ... }:
+  outputs = inputs@{ self,stylix, nixpkgs, home-manager, ... }:
   	let 
   		lib = nixpkgs.lib;
    in {
-    nixosConfigurations.nixPadT440s = lib.nixosSystem {
+    nixosConfigurations.nixPadT480 = lib.nixosSystem {
 			system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./gnome/default.nix
           {
             nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
             };
           }
-        nixos-cosmic.nixosModules.default
         stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {

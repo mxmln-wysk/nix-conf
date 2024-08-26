@@ -10,7 +10,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixPadT440s"; # Define your hostname.
+  networking.hostName = "nixPadT480"; # Define your hostname.
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
@@ -34,12 +34,7 @@
 
   services.xserver.enable = true; # Enable the X11 windowing system.
  
- #Cosmic Desktop
-	services.desktopManager.cosmic.enable = false;
-  services.displayManager.cosmic-greeter.enable = false;
-
   services.printing.enable = true; # Enable CUPS to print documents
-  sound.enable = true; # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -77,7 +72,8 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
 
-
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
   environment.systemPackages = with pkgs; [
     gedit
     thunderbird
@@ -103,6 +99,9 @@
     ventoy#live usb maker
     yt-dlp#youtube Downloader
     meld#Visual diff and merge tool
+    ntfs3g #ntfsfix
+    feh#image slide show
+    pika-backup
     #programming
     git
     php
@@ -120,7 +119,7 @@
 
 
   services.mysql = {
-    enable = true;
+    enable = false;
     package = pkgs.mariadb;
 };
 
