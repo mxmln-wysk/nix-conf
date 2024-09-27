@@ -50,6 +50,7 @@
         "remove" = "sudo nix-collect-garbage -d";
         "generations" = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
         "list" = "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq";
+        "repair" ="sudo ntfsfix -d  /dev/sdb";
 			};
 			initExtra =''
 				source ~/.bashScripts/git-prompt.sh

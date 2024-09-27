@@ -77,7 +77,7 @@
   environment.systemPackages = with pkgs; [
     gedit
     thunderbird
-    neofetch
+    fastfetch
     google-chrome
     dropbox
     keepassxc
@@ -101,7 +101,12 @@
     meld#Visual diff and merge tool
     ntfs3g #ntfsfix
     feh#image slide show
+    brave
     pika-backup
+    prismlauncher
+    gencfsm #encrytping
+    ffmpeg
+
     #programming
     git
     php
@@ -112,6 +117,7 @@
     surf
     rpi-imager
   ];
+  nixpkgs.config.allowBroken = true;
    nixpkgs.config.permittedInsecurePackages = [
     "electron-28.3.3"#look if this is necessary for next update
     "electron-27.3.11"#look if this is necessary for next update

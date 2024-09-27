@@ -5,6 +5,7 @@
     services.xserver.desktopManager.gnome.enable = true;
 
 	stylix = {
+        enable = true;
         image = /home/mwysk/nix-conf/wallpaper.png;
         base16Scheme = {
             base00 = "0e3c46";
@@ -60,6 +61,7 @@
 		gnomeExtensions.grand-theft-focus
 		gnomeExtensions.user-themes
 		gnomeExtensions.vitals
+        gnome-boxes
     ];
 	environment.gnome.excludePackages = (with pkgs; [
 		gnome-photos
@@ -72,11 +74,8 @@
 		yelp #gnome helper
 		epiphany # web browser
 		geary # email reader
-
-	]) ++ (with pkgs.gnome; [
-		#gnome-music
-		gnome-maps
-		gnome-contacts
+        gnome-maps
+        gnome-contacts
 		gnome-weather
 		iagno # go game
         tali # poker game
@@ -85,6 +84,8 @@
 		#evince # document viewer
 		gnome-characters
 		#totem # video player
-	
+
+	]) ++ (with pkgs.gnome; [
+		#gnome-music
 	]);
 }
