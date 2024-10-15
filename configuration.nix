@@ -72,8 +72,8 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
 
-  programs.steam.enable = true;
-  programs.gamemode.enable = true;
+  programs.appimage.binfmt = true;#?
+
   environment.systemPackages = with pkgs; [
     gedit
     thunderbird
@@ -103,18 +103,18 @@
     feh#image slide show
     brave
     pika-backup
-    prismlauncher
     gencfsm #encrytping
     ffmpeg
-
+    audible-cli
     #programming
     git
     php
     nodejs_20
+    virt-manager
+    python3
+    chromedriver
     vscode
     filezilla
-    ungoogled-chromium
-    surf
     rpi-imager
   ];
   nixpkgs.config.allowBroken = true;
@@ -122,13 +122,27 @@
     "electron-28.3.3"#look if this is necessary for next update
     "electron-27.3.11"#look if this is necessary for next update
   ];
-
+  
 
   services.mysql = {
     enable = false;
     package = pkgs.mariadb;
 };
-
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
+  };
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     noto-fonts-emoji

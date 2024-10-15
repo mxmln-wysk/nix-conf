@@ -12,9 +12,9 @@
             base01 = "1d494e";
             base02 = "2A5054";
             base03 = "587073";
-            base04 = "9DC8CD";
-            base05 = "F0F8FF"; #alice blue
-            base06 = "CBF2F7";
+            base04 = "8BA8AC";
+            base05 = "BEDFE4"; 
+            base06 = "DEF5FB";
             base07 = "F0F8FF"; #alice blue
             base08 = "fb6953";
             base09 = "fcab74";
