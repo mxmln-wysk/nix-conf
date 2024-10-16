@@ -117,10 +117,21 @@
     filezilla
     rpi-imager
   ];
+
+nixpkgs.overlays = [
+  (
+    final: prev: {
+      logseq = prev.logseq.override {
+        electron = prev.electron_27;
+      };
+    }
+  )
+];
+
   nixpkgs.config.allowBroken = true;
-   nixpkgs.config.permittedInsecurePackages = [
-    "electron-28.3.3"#look if this is necessary for next update
-    "electron-27.3.11"#look if this is necessary for next update
+  nixpkgs.config.permittedInsecurePackages = [
+   "electron-28.3.3"#look if this is necessary for next update
+   "electron-27.3.11"#look if this is necessary for next update
   ];
   
 
