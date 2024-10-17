@@ -92,6 +92,8 @@
     converseen #imageConverter
     libreoffice-still
     logseq
+    zotero
+    audible-cli
     gimp
     inkscape
     pitivi#video editor
