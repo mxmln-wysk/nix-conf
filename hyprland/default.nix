@@ -1,15 +1,28 @@
 { config, pkgs, inputs, ... }:
 
 {
-    programs.hyprland.enable = true
+    programs.hyprland.enable = true;
 
     environment.systemPackages = with pkgs; [
         kitty
-        wofi
+	rofi
         hyprshot
         hyprlock
+        hyprpaper
+        brightnessctl
         waybar
+	pywal
+        blueberry
+	pavucontrol
+	pulseaudio
+        bluez
+	wlogout
         swaynotificationcenter
+	playerctl
+	networkmanagerapplet
         font-awesome
+        nwg-look
+	nwg-displays
+	hyprpanel
     ];
 }

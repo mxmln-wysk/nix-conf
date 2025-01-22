@@ -1,5 +1,5 @@
 troubleshooting
-if homemanger envoriment fails => run journalctl --use -f and look for the output
+if homemanger envoriment fails => run journalctl --user -f and look for the output
 
 
 for Database Server: 

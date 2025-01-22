@@ -2,22 +2,11 @@
   description = "Nixos config flake";
 
   inputs = {
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    stylix = {
-    url = "github:danth/stylix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };    
-    };
-      home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = inputs@{ self,stylix, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
   	let 
   		lib = nixpkgs.lib;
    in {
@@ -26,16 +15,11 @@
       modules = [
         ./configuration.nix
         ./gnome/default.nix
+        ./hyprland/default.nix
           {
             nix.settings = {
             };
-          }
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager
-        {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mwysk = import ./home.nix;
+	    nixpkgs.overlays = [inputs.hyprpanel.overlay];
           }
       ];
     };

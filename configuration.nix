@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,stylix, home-manager,... }:
+{ config, pkgs, inputs,stylix,... }:
 
 {
   imports =
@@ -32,7 +32,7 @@
   };
   console.keyMap = "de";
 
-  services.xserver.enable = true; # Enable the X11 windowing system.
+  services.xserver.enable = false; # Enable the X11 windowing system.
  
   services.printing.enable = true; # Enable CUPS to print documents
   hardware.pulseaudio.enable = false;
@@ -42,12 +42,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   users.users.mwysk = {
@@ -59,22 +53,11 @@
     ];
   };
 	
-	home-manager = {
-		extraSpecialArgs = { inherit inputs; };
-    backupFileExtension = "backup";
-		users = {
-			"mwysk" = import ./home.nix;
-		};
-    sharedModules = [{
-      stylix.targets.gnome.enable = false;
-    }];
-	};
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
 
-  programs.appimage.binfmt = true;#?
   programs.steam.enable = true;
-  programs.gamemode.enable = true;
+  programs.gamemode.enable = false;
   
   environment.systemPackages = with pkgs; [
     gedit
@@ -86,51 +69,43 @@
     htop
     qogir-theme
     qogir-icon-theme
-    #gnome.dconf-editor
     vlc
     zoom-us
     spotify
     gparted
-    converseen #imageConverter
     libreoffice-still
     logseq
     zotero
-    audible-cli
     gimp
     inkscape
     pitivi#video editor
     errands#todo app
-    ventoy#live usb maker
     yt-dlp#youtube Downloader
-    meld#Visual diff and merge tool
+    #meld#Visual diff and merge tool
     ntfs3g #ntfsfix
     feh#image slide show
     brave
     pika-backup
     gencfsm #encrytping
     ffmpeg
-    audible-cli
+    prismlauncher
     #programming
+    gh
+    stow
+    neovim
+    wget
+    exfat
+    glibc
+    electron
     git
     php
     nodejs_20
-    virt-manager
     python3
-    chromedriver
     vscode
     filezilla
     rpi-imager
   ];
 
-nixpkgs.overlays = [
-  (
-    final: prev: {
-      logseq = prev.logseq.override {
-        electron = prev.electron_27;
-      };
-    }
-  )
-];
 
   nixpkgs.config.allowBroken = true;
   nixpkgs.config.permittedInsecurePackages = [
@@ -143,21 +118,6 @@ nixpkgs.overlays = [
     enable = false;
     package = pkgs.mariadb;
 };
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [(pkgs.OVMF.override {
-          secureBoot = true;
-          tpmSupport = true;
-        }).fd];
-      };
-    };
-  };
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     noto-fonts-emoji

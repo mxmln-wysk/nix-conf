@@ -46,13 +46,13 @@
 				".." = "cd ..";
 				"cdn" = "cd ~/nix-conf/";
         "update" = "sudo nix flake update";
-        "switch" = "sudo nixos-rebuild switch --flake .";
+        "switch" = "sudo nixos-rebuild switch --flake . --impure"; #dringend fixen das impure sollte nicht da sein
         "remove" = "sudo nix-collect-garbage -d";
         "generations" = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
         "list" = "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq";
         "repair5" ="sudo ntfsfix -d  /dev/sdb5";
         "repair4" ="sudo ntfsfix -d  /dev/sdb4";
-
+        "repair1" ="sudo ntfsfix -d  /dev/sdb1";
 			};
 			initExtra =''
 				source ~/.bashScripts/git-prompt.sh
