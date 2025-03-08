@@ -35,7 +35,7 @@
   services.xserver.enable = false; # Enable the X11 windowing system.
  
   services.printing.enable = true; # Enable CUPS to print documents
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -83,13 +83,18 @@
     yt-dlp#youtube Downloader
     #meld#Visual diff and merge tool
     ntfs3g #ntfsfix
+    converseen
     feh#image slide show
     brave
     pika-backup
-    gencfsm #encrytping
+    #gencfsm #encrytping
     ffmpeg
+    imagemagick
     prismlauncher
+    pspp
     #programming
+    protonvpn-gui
+    epiphany
     gh
     stow
     neovim
