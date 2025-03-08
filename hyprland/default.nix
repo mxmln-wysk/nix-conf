@@ -12,6 +12,8 @@
         brightnessctl
         waybar
 	pywal
+	wpgtk
+	pywalfox-native
         blueberry
 	pavucontrol
 	pulseaudio
@@ -24,5 +26,6 @@
         nwg-look
 	nwg-displays
 	hyprpanel
+	jq
     ];
 }
