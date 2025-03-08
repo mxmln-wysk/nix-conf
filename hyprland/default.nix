@@ -25,7 +25,6 @@
         font-awesome
         nwg-look
 	nwg-displays
-	hyprpanel
 	jq
     ];
 }

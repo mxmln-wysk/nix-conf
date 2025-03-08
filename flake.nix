@@ -2,7 +2,6 @@
   description = "Nixos config flake";
 
   inputs = {
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
@@ -19,7 +18,6 @@
           {
             nix.settings = {
             };
-	    nixpkgs.overlays = [inputs.hyprpanel.overlay];
           }
       ];
     };

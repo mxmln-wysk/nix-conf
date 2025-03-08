@@ -74,7 +74,8 @@
     spotify
     gparted
     libreoffice-still
-    logseq
+    obsidian
+    #logseq dringend nach alternative schauen => nicht mehr in nix pkgs :(
     zotero
     gimp
     inkscape
