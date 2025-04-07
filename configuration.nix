@@ -74,8 +74,8 @@
     spotify
     gparted
     libreoffice-still
-    obsidian
-    #logseq dringend nach alternative schauen => nicht mehr in nix pkgs :(
+    #obsidian
+    logseq
     zotero
     gimp
     inkscape
@@ -97,6 +97,7 @@
     protonvpn-gui
     epiphany
     gh
+    bc #calculating
     stow
     neovim
     wget
@@ -121,7 +122,7 @@
   
 
   services.mysql = {
-    enable = false;
+    enable = true;
     package = pkgs.mariadb;
 };
   fonts.enableDefaultPackages = true;
