@@ -56,7 +56,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
 
-  programs.steam.enable = true;
+  programs.steam.enable = false;
   programs.gamemode.enable = false;
   
   environment.systemPackages = with pkgs; [
@@ -76,6 +76,7 @@
     libreoffice-still
     #obsidian
     logseq
+    drawio
     zotero
     gimp
     inkscape
@@ -91,9 +92,11 @@
     #gencfsm #encrytping
     ffmpeg
     imagemagick
-    prismlauncher
+    #prismlauncher
     pspp
+    libation#audible manager
     #programming
+    sublime
     protonvpn-gui
     epiphany
     gh

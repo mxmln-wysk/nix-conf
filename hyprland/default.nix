@@ -26,5 +26,6 @@
         nwg-look
 	nwg-displays
 	jq
+	polkit_gnome
     ];
 }
