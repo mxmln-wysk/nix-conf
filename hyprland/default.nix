@@ -11,7 +11,7 @@
         hyprpaper
         brightnessctl
         waybar
-	pywal
+        pywal16
 	wpgtk
 	pywalfox-native
         blueberry
@@ -21,11 +21,14 @@
 	wlogout
         swaynotificationcenter
 	playerctl
-	networkmanagerapplet
         font-awesome
         nwg-look
 	nwg-displays
 	jq
 	polkit_gnome
+        wpgtk
+        hyprcursor
+        cliphist
+        wl-clipboard
     ];
 }

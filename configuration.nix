@@ -47,18 +47,24 @@
   users.users.mwysk = {
     isNormalUser = true;
     description = "Maximilian Wysk";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [
       firefox
     ];
   };
-	
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "mwysk" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.dragAndDrop = true;
+programs.steam = {
+  enable = true;
+  };
+  
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
 
-  programs.steam.enable = false;
-  programs.gamemode.enable = false;
-  
   environment.systemPackages = with pkgs; [
     gedit
     thunderbird
@@ -78,7 +84,7 @@
     logseq
     drawio
     zotero
-    gimp
+    gimp3
     inkscape
     pitivi#video editor
     errands#todo app
@@ -92,14 +98,11 @@
     #gencfsm #encrytping
     ffmpeg
     imagemagick
-    #prismlauncher
+    prismlauncher
     pspp
     libation#audible manager
     #programming
-    sublime
-    protonvpn-gui
-    epiphany
-    gh
+    gh #github tool
     bc #calculating
     stow
     neovim
@@ -114,6 +117,7 @@
     vscode
     filezilla
     rpi-imager
+    openjdk8-bootstrap
   ];
 
 
@@ -131,7 +135,7 @@
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     noto-fonts-emoji
-    noto-fonts
+    #noto-fonts
     roboto
     roboto-mono
     roboto-slab

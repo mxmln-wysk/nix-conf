@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
-    services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = true;
+    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.desktopManager.gnome.enable = true;
 
 
     environment.systemPackages = with pkgs; [
@@ -16,6 +16,7 @@
 			gnomeExtensions.grand-theft-focus
 			gnomeExtensions.user-themes
 			gnomeExtensions.vitals
+			gnome-boxes
     ];
 	environment.gnome.excludePackages = (with pkgs; [
 		gnome-photos
