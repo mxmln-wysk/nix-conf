@@ -43,6 +43,8 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  services.flatpak.enable = true;
+
 
   users.users.mwysk = {
     isNormalUser = true;
@@ -53,15 +55,18 @@
     ];
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "mwysk" ];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.dragAndDrop = true;
-programs.steam = {
+  #virtualisation.virtualbox.host.enable = true;
+  #users.extraGroups.vboxusers.members = [ "mwysk" ];
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
+  #virtualisation.virtualbox.guest.enable = true;
+  #virtualisation.virtualbox.guest.dragAndDrop = true;
+  programs.steam = {
   enable = true;
-  };
-  
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+};
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.enableParallelBuildingByDefault = false;
 
@@ -69,7 +74,6 @@ programs.steam = {
     gedit
     thunderbird
     fastfetch
-    google-chrome
     dropbox
     keepassxc
     htop
@@ -80,6 +84,7 @@ programs.steam = {
     spotify
     gparted
     libreoffice-still
+    onlyoffice-desktopeditors
     #obsidian
     logseq
     drawio
@@ -96,11 +101,15 @@ programs.steam = {
     brave
     pika-backup
     #gencfsm #encrytping
+    wayfarer#screenrec
     ffmpeg
     imagemagick
     prismlauncher
     pspp
+    gnucash #buchfuerung
+    perl540Packages.FinanceQuote#for GnuCash
     libation#audible manager
+    audio-recorder
     #programming
     gh #github tool
     bc #calculating
@@ -117,7 +126,10 @@ programs.steam = {
     vscode
     filezilla
     rpi-imager
+    libxcb-cursor
     openjdk8-bootstrap
+    android-tools
+    android-studio
   ];
 
 
@@ -127,14 +139,26 @@ programs.steam = {
    "electron-27.3.11"#look if this is necessary for next update
   ];
   
-
+networking.hosts = {
+  "127.0.0.1" = [
+    #"www.youtube.com"
+    #"youtube.com"
+    #"m.youtube.com"
+    "lichess.org"
+    "www.lichess.org"
+    "www.twitch.tv"
+    "twitch.tv"
+    "de.crazygames.com"
+    "www.jetpunk.com"
+  ];
+};
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
 };
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     #noto-fonts
     roboto
     roboto-mono
