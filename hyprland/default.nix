@@ -12,7 +12,6 @@
         brightnessctl
         waybar
         pywal16
-	wpgtk
 	pywalfox-native
         blueberry
 	pavucontrol
